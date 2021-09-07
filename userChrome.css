@@ -1,1 +1,106 @@
-/home/snapdeus/.mozilla/firefox/jmqqkqxg.default-release/chrome/userChrome.css
+tab {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px !important;
+}
+
+/* Use color and shape to make the tabs look more like tabs */
+
+.tab-background {
+  background: #4b587487;
+  border-radius: 4px 4px 0 0 !important;
+  margin-bottom: 0px !important;
+  /* box-shadow: 0 0 2px 2px rgba(0,0,0,0.1) !important; */
+  border: 1px solid rgba(0, 0, 0, ) !important;
+  border-bottom-width: 0px !important;
+}
+
+/* Selected tabs I want a bright background with a dark foreground */
+
+.tabbrowser-tab[selected] .tab-background {
+  background: #585060 !important;
+}
+
+.tabbrowser-tab[selected] .tab-label {
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold !important;
+}
+
+/* Draw a solid line underneath to make the selected tab look *connected* to the rest of the browser */
+
+#TabsToolbar {
+  border-bottom: 1px solid #bdbdbd7e !important;
+}
+
+/* Hover over tabs */
+
+.tabbrowser-tab:hover .tab-background:not([selected]) {
+  background: #768ab487 !important;
+}
+
+:root {
+  /* Tab Bar */
+  --proton-tab-block-margin: 2px !important;
+  /* Original: 4px */
+  --inline-tab-padding: 6px !important;
+  /* Original: 8px */
+  /* Panel */
+  --arrowpanel-menuicon-padding: 8px;
+  --arrowpanel-menuitem-margin: 0 var(--arrowpanel-menuicon-padding) !important;
+  /* Original: 0 8px */
+  --arrowpanel-menuitem-padding: 5px !important;
+  /* Original: 8px */
+  --arrowpanel-padding: 0.8em !important;
+  /* Original: 16px or .cui-widget-panel, .cui-widget-panel::part(arrowcontent) => 4px 0 */
+}
+
+:root[uidensity=compact] {
+  /* Tool Bar */
+  --toolbarbutton-outer-padding: 2px !important;
+  /* Original: 3px, General is 2px */
+  /* Panel */
+  --arrowpanel-menuitem-padding: 3px !important;
+  /* Original: 8px */
+}
+
+:root[uidensity=touch] {
+  /* Tab Bar - Like Original */
+  --proton-tab-block-margin: 4px !important;
+  /* Original: 4px */
+  --inline-tab-padding: 8px !important;
+  /* Original: 8px */
+  /* Panel - Like Original */
+  --arrowpanel-menuitem-padding: 8px !important;
+  /* Original: 8px */
+}
+
+/** Menu - Reduce Padding ***************************************************/
+
+:root:not([uidensity=touch]) menupopup>menuitem, menupopup>menu {
+  padding-block: 0.35em !important;
+  /* Original: 0.5em */
+}
+
+:root:not([uidensity=touch]) .menu-text, .menu-iconic-text {
+  padding-inline-end: 0 !important;
+  /* Original: 2px */
+}
+
+:root:not([uidensity=touch]) .menupopup-arrowscrollbox {
+  padding-block: 1px !important;
+  /* Original: 4px*/
+}
+
+:root:not([uidensity=touch]) #context-navigation:not([hidden]) {
+  padding: 0 0 1px !important;
+  /* Original: 0 0 4px*/
+}
+
+:root:not([uidensity=touch]) .menu-right {
+  margin-right: 6px !important;
+  /* Original: 12px */
+}
+
+:root[uidensity=compact] menupopup>menuitem, menupopup>menu {
+  padding-block: 0.25em !important;
+  /* Original: 0.5em */
+}
